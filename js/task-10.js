@@ -1,35 +1,29 @@
-// Напишіть функцію fizzBuzz(num), яка приймає число і перевіряє кожне число від 1 до num:
-// Якщо число ділитися  без остачі на 3 - виводить в консоль 'fizz',
-// якщо ділиться  без остачі на 5 - виводить в консоль 'buzz',
-// якщо ділиться  без остачі і на 3, і на 5 - виводить в консоль 'fizzbuzz'.
+// Напишіть функцію calcTotalPrice(fruits, fruitName),
+// яка приймає массив об'єктів (fruits) і рядок з назвою фрукта (fruitName).
+// Функція рахує і повертає загальну вартість фрукта
+// з таким ім'ям, ціною та кількістю з об'єкта.
+// Зверніть увагу, що в масиві може бути кілька обʼєктів з однаковою 
+// назвою фрукта, це також треба урахувати.
 
-// function fizzBuzz(num) { 
-//     let i = 1;
-//     if (typeof num !== 'number') {
-//         console.log('Not a number!');
-//         return;
-//     }
-//     while (i <= num) {
-//         i++;
-//         if (i % 3 === 0 && i % 5 === 0) {
-//             console.log(i, 'fizzbuzz');
-//         } else if (i % 3 === 0) {
-//             console.log(i, 'fizz');
-//         } else if (i % 5 === 0) {
-//             console.log(i, 'buzz');
-//         }
-//     }
-// }
-// fizzBuzz(35);
-
-
-
-// const start = 1;
-// const end = 20;
-// let sum = 0;
-// for (let i = start; i <= end; i++){
-//     if (i % 2 === 0) {
-//         sum ++;
-//     }
-// }
-// console.log(`Всього парних чисел: ${sum}`);
+const fruits = [
+    { name: "Яблуко", price: 45, quantity: 7 },
+    { name: "Апельсин", price: 60, quantity: 4 },
+    { name: "Банан", price: 125, quantity: 8 },
+    { name: "Груша", price: 350, quantity: 2 },
+    { name: "Виноград", price: 440, quantity: 3 },
+    { name: "Банан", price: 125, quantity: 3 },
+  ];
+function calcTotalPrice(fruits, fruitName) {
+    let sum = 0;
+    for (const item of fruits) {
+        if (item.name === fruitName) {
+            sum += item.price * item.quantity;
+  
+        } 
+    }
+        return`${fruitName}: ${sum}`;
+}
+console.log(calcTotalPrice(fruits, "Банан")); // 1250
+console.log(calcTotalPrice(fruits, "Груша")); // 700
+console.log(calcTotalPrice(fruits, "Яблуко")); // 315
+console.log(calcTotalPrice(fruits, "Виноград")); // 1320
