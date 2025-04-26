@@ -10,18 +10,17 @@
 
 
 
-const styles = ['jazz', 'blues'];
-styles.push('rock-n-roll');
-for (const item of styles) {
-    if (item === "blues") {
-        styles[styles.indexOf(item)] = "classic";
-    }
-}
-function logItems(array) { 
-    for (let i = 0; i < array.length; i++) {
-        console.log(`${i + 1} - ${array[i]}`);
-    }
-}
-
-console.log(styles);
-logItems(styles);
+// const styles = ['jazz', 'blues'];
+// styles.push('rock-n-roll');
+// for (const item of styles) {
+//     if (item === "blues") {
+//         styles[styles.indexOf(item)] = "classic";
+//     }
+// }
+// function logItems(array) { 
+//     for (let i = 0; i < array.length; i++) {
+//         console.log(`${i + 1} - ${array[i]}`);
+//     }
+// }
+// console.log(styles);
+// logItems(styles);
